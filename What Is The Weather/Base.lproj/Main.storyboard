@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="What_Is_The_Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-Ov-YtR">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
+                                <items>
+                                    <navigationItem title="What Is The Weather?" id="UaU-dR-Btb"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="landscape.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WT5-Y0-Tm1">
+                                <rect key="frame" x="-4" y="44" width="383" height="623"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ItQ-Ov-YtR" secondAttribute="trailing" constant="-20" id="GJC-2X-Ewr"/>
+                            <constraint firstItem="WT5-Y0-Tm1" firstAttribute="top" secondItem="ItQ-Ov-YtR" secondAttribute="bottom" id="Vs6-pl-FP7"/>
+                            <constraint firstItem="WT5-Y0-Tm1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Wvw-O6-LcW"/>
+                            <constraint firstItem="ItQ-Ov-YtR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bYH-yc-WuM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WT5-Y0-Tm1" secondAttribute="trailing" constant="-20" id="jmO-Ry-dNx"/>
+                            <constraint firstItem="ItQ-Ov-YtR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="lkL-XY-7g4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WT5-Y0-Tm1" secondAttribute="bottom" id="qra-tr-W13"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439.5" y="348.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="landscape.jpg" width="4288" height="2848"/>
+    </resources>
 </document>
