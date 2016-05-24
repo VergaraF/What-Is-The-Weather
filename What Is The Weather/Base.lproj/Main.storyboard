@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-Ov-YtR">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-Ov-YtR">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="What Is The Weather?" id="UaU-dR-Btb"/>
                                 </items>
@@ -26,15 +29,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="landscape.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WT5-Y0-Tm1">
                                 <rect key="frame" x="-4" y="44" width="383" height="623"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a city..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCj-PK-xRI">
+                                <rect key="frame" x="100" y="94" width="174" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="NuT-Dz-CFU"/>
+                                    <constraint firstAttribute="height" constant="21" id="sv1-hh-bTJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yl-XV-n2U">
+                                <rect key="frame" x="86" y="133" width="203" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xju-gN-Ihl"/>
+                                    <constraint firstAttribute="width" constant="203" id="ya3-e0-ChT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2yl-XV-n2U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C12-Rs-Iao"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ItQ-Ov-YtR" secondAttribute="trailing" constant="-20" id="GJC-2X-Ewr"/>
+                            <constraint firstItem="XCj-PK-xRI" firstAttribute="top" secondItem="ItQ-Ov-YtR" secondAttribute="bottom" constant="50" id="RMA-a1-reF"/>
                             <constraint firstItem="WT5-Y0-Tm1" firstAttribute="top" secondItem="ItQ-Ov-YtR" secondAttribute="bottom" id="Vs6-pl-FP7"/>
                             <constraint firstItem="WT5-Y0-Tm1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Wvw-O6-LcW"/>
+                            <constraint firstItem="XCj-PK-xRI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJJ-AW-0KQ"/>
                             <constraint firstItem="ItQ-Ov-YtR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bYH-yc-WuM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WT5-Y0-Tm1" secondAttribute="trailing" constant="-20" id="jmO-Ry-dNx"/>
                             <constraint firstItem="ItQ-Ov-YtR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="lkL-XY-7g4"/>
+                            <constraint firstItem="2yl-XV-n2U" firstAttribute="top" secondItem="XCj-PK-xRI" secondAttribute="bottom" constant="18" id="mcn-Rn-cYG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WT5-Y0-Tm1" secondAttribute="bottom" id="qra-tr-W13"/>
                         </constraints>
                     </view>
