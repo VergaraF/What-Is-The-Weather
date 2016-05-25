@@ -55,14 +55,27 @@
                                     <constraint firstAttribute="height" constant="30" id="AOA-QG-YEB"/>
                                 </constraints>
                                 <state key="normal" title="Go!"/>
+                                <connections>
+                                    <action selector="goBtnListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nUQ-at-UNI"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-Sk-MJ7">
+                                <rect key="frame" x="86" y="249" width="203" height="191"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4f7-yq-K0Z" firstAttribute="top" secondItem="2yl-XV-n2U" secondAttribute="bottom" constant="29" id="1FN-QY-KuA"/>
                             <constraint firstItem="2yl-XV-n2U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C12-Rs-Iao"/>
+                            <constraint firstItem="eNP-Sk-MJ7" firstAttribute="top" secondItem="4f7-yq-K0Z" secondAttribute="bottom" constant="27" id="CdC-GI-tZm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ItQ-Ov-YtR" secondAttribute="trailing" constant="-20" id="GJC-2X-Ewr"/>
+                            <constraint firstItem="eNP-Sk-MJ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="66" id="MQ6-P1-PpO"/>
                             <constraint firstItem="XCj-PK-xRI" firstAttribute="top" secondItem="ItQ-Ov-YtR" secondAttribute="bottom" constant="50" id="RMA-a1-reF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eNP-Sk-MJ7" secondAttribute="trailing" constant="66" id="SRv-8T-0MP"/>
+                            <constraint firstItem="eNP-Sk-MJ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ue3-uB-b2n"/>
                             <constraint firstItem="WT5-Y0-Tm1" firstAttribute="top" secondItem="ItQ-Ov-YtR" secondAttribute="bottom" id="Vs6-pl-FP7"/>
                             <constraint firstItem="WT5-Y0-Tm1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Wvw-O6-LcW"/>
                             <constraint firstItem="XCj-PK-xRI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJJ-AW-0KQ"/>
@@ -75,6 +88,10 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="userInput" destination="2yl-XV-n2U" id="u9K-gz-DEY"/>
+                        <outlet property="weatherLabel" destination="eNP-Sk-MJ7" id="tBl-Kj-HCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

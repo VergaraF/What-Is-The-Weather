@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var userInput: UITextField!
+    @IBOutlet var weatherLabel: UILabel!
+    
+    
+    @IBAction func goBtnListener(sender: AnyObject) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
