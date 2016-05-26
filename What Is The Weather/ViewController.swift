@@ -13,8 +13,15 @@ class ViewController: UIViewController {
     @IBOutlet var userInput: UITextField!
     @IBOutlet var weatherLabel: UILabel!
     
+    var websiteToScrap: String = ""
+    
     
     @IBAction func goBtnListener(sender: AnyObject) {
+        websiteToScrap = initWebsiteString(userInput.text!)
+    }
+    
+    private func initWebsiteString(city: String) -> String{
+        return "http://www.weather-forecast.com/locations/" + city + "/forecasts/latest"
         
     }
     override func viewDidLoad() {
