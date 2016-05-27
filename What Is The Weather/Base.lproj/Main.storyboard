@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-Ov-YtR">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-Ov-YtR">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="VBU-kq-pMa"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.1160409078001976" green="0.1788409948348999" blue="0.64589142799377441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </textAttributes>
@@ -26,10 +30,10 @@
                                     <navigationItem title="What Is The Weather?" id="UaU-dR-Btb"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="landscape.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WT5-Y0-Tm1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="landscape.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WT5-Y0-Tm1">
                                 <rect key="frame" x="-4" y="44" width="383" height="623"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a city..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCj-PK-xRI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter a city..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCj-PK-xRI">
                                 <rect key="frame" x="100" y="94" width="174" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="174" id="NuT-Dz-CFU"/>
@@ -39,7 +43,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. Montreal, Toronto..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yl-XV-n2U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. Montreal, Toronto..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yl-XV-n2U">
                                 <rect key="frame" x="86" y="133" width="203" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Xju-gN-Ihl"/>
@@ -48,7 +52,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-yq-K0Z">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-yq-K0Z">
                                 <rect key="frame" x="172" y="192" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="226-UY-SE7"/>

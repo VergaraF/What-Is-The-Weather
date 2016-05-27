@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var userInput: UITextField!
     @IBOutlet var weatherLabel: UILabel!
     
     var websiteToScrap: String = ""
+    let stringDelimeter = "<span class='phrase'>"
     
     @IBAction func goBtnListener(sender: AnyObject) {
        // websiteToScrap = initWebsiteString(userInput.text!)
@@ -35,9 +36,6 @@ class ViewController: UIViewController {
                     self.setWeatherLabel(webContent!)
          
                 })
-            
-         
-         
                 print(webContent)
          
             }else{
@@ -60,17 +58,32 @@ class ViewController: UIViewController {
     }
     
     private func setWeatherLabel(webContent: NSString){
-        if webContent.containsString("phrase"){
+        if webContent.containsString(stringDelimeter){
             print("the city exist")
             
         }else{
-            self.weatherLabel.text = "Sorry, this city doesn't exist... yet!"
-            self.weatherLabel.textColor = UIColor.redColor()
+            setWeatherLabelHelper(UIColor.redColor(), label: "Sorry, this city doesn't exist... yet!")
         }
         
     }
+    
+    private func setWeatherLabelHelper(colour: UIColor, label: String){
+        self.weatherLabel.textColor = colour
+        self.weatherLabel.text = label
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userInput.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
