@@ -16,8 +16,11 @@ class ViewController: UIViewController {
     var websiteToScrap: String = ""
     
     
+    
     @IBAction func goBtnListener(sender: AnyObject) {
-        websiteToScrap = initWebsiteString(userInput.text!)
+       // websiteToScrap = initWebsiteString(userInput.text!)
+        let url = NSURL(string: initWebsiteString(userInput.text!))!
+
     }
     
     private func initWebsiteString(city: String) -> String{
