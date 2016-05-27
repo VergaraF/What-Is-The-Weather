@@ -15,16 +15,58 @@ class ViewController: UIViewController {
     
     var websiteToScrap: String = ""
     
-    
-    
     @IBAction func goBtnListener(sender: AnyObject) {
        // websiteToScrap = initWebsiteString(userInput.text!)
         let url = NSURL(string: initWebsiteString(userInput.text!))!
+        
+        /* /!\It downloads the HTML data from the website and displays it */
+         
+         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            
+            // will happen when task completes (closure)
+         
+            if let urlContent = data{
+            
+         
+                let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
+         
+                dispatch_async(dispatch_get_main_queue(), {
+                // self.webView.loadHTMLString(String(webContent), baseURL: nil)
+                    self.setWeatherLabel(webContent!)
+         
+                })
+            
+         
+         
+                print(webContent)
+         
+            }else{
+            
+                //show error message
+                print(error)
+            }
+        
+        
+        }
+        
+         
+         task.resume()
 
     }
     
     private func initWebsiteString(city: String) -> String{
         return "http://www.weather-forecast.com/locations/" + city + "/forecasts/latest"
+        
+    }
+    
+    private func setWeatherLabel(webContent: NSString){
+        if webContent.containsString("phrase"){
+            print("the city exist")
+            
+        }else{
+            self.weatherLabel.text = "Sorry, this city doesn't exist... yet!"
+            self.weatherLabel.textColor = UIColor.redColor()
+        }
         
     }
     override func viewDidLoad() {
