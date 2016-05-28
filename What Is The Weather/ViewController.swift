@@ -71,7 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             localStringDelimeter = "</span>"
             let forecastToBeSetToLabel = forecast[1].componentsSeparatedByString(localStringDelimeter)
             
-            setWeatherLabelHelper(UIColor.blackColor(), label: forecastToBeSetToLabel[0].stringByReplacingOccurrencesOfString("&deg;", withString: " degrees "))
+            setWeatherLabelHelper(UIColor.blackColor(), label: forecastToBeSetToLabel[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º"))
         //    print(forecastToBeReturned[0])
             
             
