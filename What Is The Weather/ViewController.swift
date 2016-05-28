@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var weatherLabel: UILabel!
     
     var websiteToScrap: String = ""
-    let stringDelimeter = "<span class='phrase'>"
+    let stringDelimeter = "<span class=\"phrase\">"
     
     @IBAction func goBtnListener(sender: AnyObject) {
        // websiteToScrap = initWebsiteString(userInput.text!)
@@ -36,12 +36,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.setWeatherLabel(webContent!)
          
                 })
-                print(webContent)
+            //    print(webContent)
          
             }else{
             
                 //show error message
-                print(error)
+                print("error")
             }
         
         
@@ -58,8 +58,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setWeatherLabel(webContent: NSString){
-        if webContent.containsString(stringDelimeter){
+        
+        if webContent.containsString(self.stringDelimeter){
             print("the city exist")
+            
+            var forecast = [String]()
+            
+            var localStringDelimeter = self.stringDelimeter
+            
+    
+            forecast = webContent.componentsSeparatedByString(localStringDelimeter)
+            localStringDelimeter = "</span>"
+            let forecastToBeSetToLabel = forecast[1].componentsSeparatedByString(localStringDelimeter)
+            
+            setWeatherLabelHelper(UIColor.blackColor(), label: forecastToBeSetToLabel[0])
+        //    print(forecastToBeReturned[0])
+            
+            
             
         }else{
             setWeatherLabelHelper(UIColor.redColor(), label: "Sorry, this city doesn't exist... yet!")
