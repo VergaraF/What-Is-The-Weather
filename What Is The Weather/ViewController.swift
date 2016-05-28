@@ -18,7 +18,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func goBtnListener(sender: AnyObject) {
        // websiteToScrap = initWebsiteString(userInput.text!)
-        let url = NSURL(string: initWebsiteString(userInput.text!))!
+        let attemptedUrl = NSURL(string: initWebsiteString(userInput.text!.stringByReplacingOccurrencesOfString(" ", withString: "-")))
+        
+        if let url = attemptedUrl{
+            
+        
         
         /* /!\It downloads the HTML data from the website and displays it */
          
@@ -49,6 +53,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
          
          task.resume()
+        }else{
+            self.setWeatherLabelHelper(UIColor.redColor(), label: "This city doesn't exist... yet!")
+        }
 
     }
     
